@@ -1,6 +1,5 @@
 import { printZodErrorGroup } from "./utils";
 import { instanceSchema, type InstanceSchema } from "./schemas";
-import axios from "axios";
 
 export async function createTMDbInstance(options: InstanceSchema = { apiKey: '' }) {
   const optionsResult = instanceSchema.safeParse(options);
@@ -13,5 +12,5 @@ export async function createTMDbInstance(options: InstanceSchema = { apiKey: '' 
 
   /** @TODO Load configuration from TMDb and return methods (lazy loaded maybe ?) */
   /** @TODO create a wrapper function which wraps a method and requires API key to be passed down */
-  console.log('Init tmdb', axios);
+  console.log('Init tmdb');
 }
