@@ -1,4 +1,4 @@
-# [tmdb-typescript-wrapper]()
+# [tmdb-typescript-wrapper]() (W.I.P)
 
 An unofficial typescript wrapper for TMDb API.
 
