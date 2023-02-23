@@ -6,9 +6,11 @@ An unofficial typescript wrapper for TMDb API.
 
 ## Requirements
 
-- Node.js >= 12.0.0
-- cross-fetch >= 3.1.5
-- zod >= 3.20.6
+- NodeJS >= 12.0.0 (TBD)
+- [cross-fetch](https://github.com/lquixada/cross-fetch) >= 3.1.5
+- [zod](https://github.com/colinhacks/zod) >= 3.20.6
+
+> ⚠️ **Warning**: If you're in an environment that doesn't support Promises such as Internet Explorer, you must install an ES6 Promise compatible polyfill. [es6-promise](https://github.com/jakearchibald/es6-promise) is suggested.
 
 ## Installation
 
