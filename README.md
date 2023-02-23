@@ -26,9 +26,9 @@ import { createTMDbInstance } from "tmdb-typescript-wrapper";
 // tmdb will expose all the methods from the TMDb API
 const tmdb = createTMDbInstance({ apiKey: "YOUR_TMDB_KEY" });
 
-// to get methods for authorized session
+// to get authorized session methods and session id for independent requests
 const authTMDb = tmdb.authorizedSession({ username: "", password: "" });
 
-// to get methods for guest session
+// to get guest session methods and session id for independent requests
 const guestTMDb = tmdb.guestSession();
 ```
