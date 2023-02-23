@@ -1,1 +1,1 @@
-# TMDb typescript wrapper
+# TMDb v3 typescript wrapper
