@@ -1,0 +1,28 @@
+{
+  "name": "tmdb-typescript-wrapper",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "TypeScript wrapper for The Movie Database API",
+  "main": "./lib/index.mjs",
+  "module": "./lib/index.mjs",
+  "scripts": {
+    "build": "tsup",
+    "start": "tsup -- --watch"
+  },
+  "keywords": [
+    "tmdb",
+    "typescript"
+  ],
+  "author": "Dovydas Liniovas <liniovas.dovydas@gmail.com>",
+  "license": "MIT",
+  "exports": {
+    "default": "./lib/index.cjs",
+    "import": "./lib/index.mjs",
+    "require": "./lib/index.cjs",
+    "node": "./lib/index.cjs"
+  },
+  "devDependencies": {
+    "tsup": "^6.6.3",
+    "typescript": "^4.9.5"
+  }
+}
