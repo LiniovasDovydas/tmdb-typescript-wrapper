@@ -1,7 +1,6 @@
 import { defineConfig } from 'tsup';
 
 export default defineConfig((options) => ({
-  entryPoints: ['src/index.ts'],
   format: ['cjs', 'esm'],
   minify: !options.watch,
   platform: "neutral",
@@ -11,5 +10,11 @@ export default defineConfig((options) => ({
   treeshake: true,
   outDir: 'lib',
   clean: true,
-  dts: true,
+  dts: {
+    resolve: true,
+    compilerOptions: {
+      moduleResolution: "node",
+    },
+    entry: 'src/index.ts',
+  },
 }));
