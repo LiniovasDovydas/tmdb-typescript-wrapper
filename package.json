@@ -42,6 +42,9 @@
   "peerDependenciesMeta": {
     "zod": {
       "optional": false
+    },
+    "cross-fetch": {
+      "optional": false
     }
   }
 }
