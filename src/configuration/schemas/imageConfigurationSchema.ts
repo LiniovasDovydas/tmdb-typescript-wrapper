@@ -16,6 +16,8 @@ export const imageConfigurationSchema = z.object({
   poster_sizes: imagePosterSizesSchema.min(1, 'TMDb returned an invalid image poster sizes array'),
   profile_sizes: imageProfileSizesSchema.min(1, 'TMDb returned an invalid image profile sizes array'),
   still_sizes: imageStillSizesSchema.min(1, 'TMDb returned an invalid image still sizes array'),
+}, {
+  required_error: 'TMDb returned an invalid image configuration'
 });
 
 export type ImageConfigurationSchema = z.infer<typeof imageConfigurationSchema>;

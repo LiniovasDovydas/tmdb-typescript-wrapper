@@ -6,3 +6,8 @@ export {
   type PersonAppendToResponseEnum,
   type PersonDetailsPathParamsSchema,
 } from './personDetailsRequestSchemas';
+
+export {
+  personDetailsResponseSchema,
+  type PersonDetailsResponseSchema,
+} from './personDetailsResponseSchema';

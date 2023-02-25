@@ -1,7 +1,8 @@
 import { printZodErrorGroup } from "./utils";
 import { instanceSchema, type InstanceSchema } from "./schemas";
+import { createTMDbCRUDInstance } from './createTMDbCRUDInstance';
 
-export async function createTMDbInstance(options: InstanceSchema = { apiKey: '' }) {
+export function createTMDbInstance(options: InstanceSchema = { apiKey: '' }) {
   const optionsResult = instanceSchema.safeParse(options);
 
   /** Validate passed options */
@@ -10,7 +11,5 @@ export async function createTMDbInstance(options: InstanceSchema = { apiKey: '' 
     return;
   }
 
-  /** @TODO Load configuration from TMDb and return methods (lazy loaded maybe ?) */
-  /** @TODO create a wrapper function which wraps a method and requires API key to be passed down */
-  console.log('Init tmdb');
+  return createTMDbCRUDInstance(options.apiKey);
 }
