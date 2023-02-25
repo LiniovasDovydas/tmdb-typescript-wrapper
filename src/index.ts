@@ -1,15 +1,15 @@
-import { printZodErrorGroup } from "./utils";
-import { instanceSchema, type InstanceSchema } from "./schemas";
-import { createTMDbCRUDInstance } from './createTMDbCRUDInstance';
+export { type JobSchema } from './configuration/schemas/jobSchema';
+export { type CountrySchema } from './configuration/schemas/countrySchema';
+export { type TimeZoneSchema } from './configuration/schemas/timeZoneSchema';
+export { type LanguagesSchema } from './configuration/schemas/languagesSchema';
+export { type ConfigurationSchema } from './configuration/schemas/configurationSchema';
+export { type PersonDetailsResponseSchema } from './people/schemas/personDetailsResponseSchema';
 
-export function createTMDbInstance(options: InstanceSchema = { apiKey: '' }) {
-  const optionsResult = instanceSchema.safeParse(options);
+export {
+  personAppendToResponseEnum,
+  type PersonDetailsQuerySchema,
+  type PersonAppendToResponseEnum,
+  type PersonDetailsPathParamsSchema,
+} from './people/schemas/personDetailsRequestSchemas';
 
-  /** Validate passed options */
-  if (optionsResult.success === false) {
-    printZodErrorGroup(optionsResult, 'TMDb instance options are invalid.');
-    return;
-  }
-
-  return createTMDbCRUDInstance(options.apiKey);
-}
+export { createTMDbInstance } from './createTMDbInstance';

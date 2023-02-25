@@ -6,7 +6,7 @@ import {
   imagePosterSizesSchema,
   imageStillSizesSchema,
   imageLogoSizesSchema,
-} from "../../schemas/images";
+} from "./images";
 
 export const imageConfigurationSchema = z.object({
   base_url: z.string().url('TMDb returned an invalid image base URL'),

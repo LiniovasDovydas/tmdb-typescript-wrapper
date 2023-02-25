@@ -12,8 +12,8 @@ type RequestHandlerProps<P, Q, B, R> = {
 }
 
 export function createRequestHandler<P, Q, B, R>(
-  url: string,
   apiKey: string,
+  url: string,
   schemas: RequestHandlerProps<P, Q, B, R>,
   defaultRequestOptions?: RequestHandlerInit,
 ) {

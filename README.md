@@ -6,7 +6,7 @@ An unofficial typescript wrapper for TMDb API.
 
 ## Requirements
 
-- NodeJS >= 12.0.0 (TBD)
+- NodeJS >= 14.0.0
 - [cross-fetch](https://github.com/lquixada/cross-fetch) >= 3.1.5
 - [zod](https://github.com/colinhacks/zod) >= 3.20.6
 

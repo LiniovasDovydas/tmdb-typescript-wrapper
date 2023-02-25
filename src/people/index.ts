@@ -1,0 +1,1 @@
+export { peopleRequestHandlers } from './peopleRequestHandlers';
