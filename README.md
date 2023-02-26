@@ -29,8 +29,11 @@ import { createTMDbInstance } from "tmdb-typescript-wrapper";
 const tmdb = createTMDbInstance({ apiKey: "YOUR_TMDB_KEY" });
 
 // to get authorized session methods and session id for independent requests
-const authTMDb = tmdb.authorizedSession({ username: "", password: "" });
+const authSessionId = tmdb.getAuthorizedSessionId({
+  username: "",
+  password: "",
+});
 
 // to get guest session methods and session id for independent requests
-const guestTMDb = tmdb.guestSession();
+const guestSessionId = tmdb.getGuestSessionId();
 ```
