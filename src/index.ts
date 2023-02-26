@@ -10,4 +10,8 @@ export * from './configuration';
 export * from './people';
 // #endregion
 
+// #region Review namespace
+export * from './reviews';
+// #endregion
+
 export { createTMDbInstance } from './createTMDbInstance';

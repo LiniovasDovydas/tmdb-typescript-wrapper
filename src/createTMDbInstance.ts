@@ -1,6 +1,8 @@
 import { printZodErrorGroup } from "./utils";
-import { peopleRequestHandlers } from "./people";
 import { InstanceSchema, instanceSchema } from "./schemas";
+
+import { peopleRequestHandlers } from "./people";
+import { reviewsRequestHandlers } from "./reviews";
 import { configurationRequestHandlers } from "./configuration";
 
 export function createTMDbInstance(options: InstanceSchema = { apiKey: '' }) {
@@ -17,5 +19,6 @@ export function createTMDbInstance(options: InstanceSchema = { apiKey: '' }) {
   return {
     ...configurationRequestHandlers(apiKey),
     ...peopleRequestHandlers(apiKey),
+    ...reviewsRequestHandlers(apiKey),
   };
 }
