@@ -11,6 +11,8 @@ type RequestHandlerProps<P, Q, B, R> = {
   responseSchema: z.Schema<R>;
 }
 
+const BASE_URL = "https://api.themoviedb.org/3";
+
 export function createRequestHandler<P, Q, B, R>(
   apiKey: string,
   url: string,
@@ -18,11 +20,6 @@ export function createRequestHandler<P, Q, B, R>(
   defaultRequestOptions?: RequestHandlerInit,
 ) {
   const { pathSchema, querySchema, bodySchema, responseSchema } = schemas;
-  
-  const config = {
-    baseUrl: "https://api.themoviedb.org/3",
-    apiKey,
-  };
 
   async function requestHandler(
     props: P & Q & B extends object ? P & Q & B : {},
@@ -43,7 +40,7 @@ export function createRequestHandler<P, Q, B, R>(
 
     /** Build query for the request */
     const query = new URLSearchParams();
-    query.append('api_key', config.apiKey);
+    query.append('api_key', apiKey);
 
     /** Append parsed query params if defined */
     if (parsedQuery) {
@@ -59,7 +56,7 @@ export function createRequestHandler<P, Q, B, R>(
     };
 
     /** Make the request to the TMDb */
-    const response = await fetch(`${config.baseUrl}/${parsedUrl}?${query.toString()}`, {
+    const response = await fetch(`${BASE_URL}/${parsedUrl}?${query.toString()}`, {
       ...mergedOptions,
       headers: {
         'Content-Type': 'application/json',
@@ -73,15 +70,15 @@ export function createRequestHandler<P, Q, B, R>(
   
     /** Parse data and validate model */
     const data = await response.json();
-    const parseResponse = responseSchema.safeParse(data);
+    const parsedData = responseSchema.safeParse(data);
 
     /** Some property was not returned, inform but do not fail */
-    if (parseResponse.success === false) {
-      printZodErrorGroup(parseResponse, `Response schema is invalid for "${config.baseUrl}/${parsedUrl}".`);
+    if (parsedData.success === false) {
+      printZodErrorGroup(parsedData, `Response schema is invalid for "${BASE_URL}/${parsedUrl}".`);
       return data as Promise<R>;
     }
     
-    return parseResponse.data;
+    return parsedData.data;
   };
 
   return requestHandler;
