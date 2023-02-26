@@ -1,10 +1,10 @@
 import { z } from "zod";
-import { configurationSchema } from "./schemas";
 import { createRequestHandler } from "../utils";
 import { jobSchema } from "./schemas/jobSchema";
 import { countrySchema } from "./schemas/countrySchema";
 import { timeZoneSchema } from "./schemas/timeZoneSchema";
 import { languagesSchema } from "./schemas/languagesSchema";
+import { configurationSchema } from "./schemas/configurationSchema";
 
 export function configurationRequestHandlers(apiKey: string) {
   return {
