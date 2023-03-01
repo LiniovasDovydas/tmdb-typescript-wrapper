@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { languageSchema } from "../../schemas/languageSchema";
+import { languageSchemaQuery } from "../../schemas/languageSchema";
 import { personImageProfileSchema } from "./personImageProfileSchema";
 
 export const personTaggedImagesPathParamsSchema = z.object({
@@ -8,7 +8,7 @@ export const personTaggedImagesPathParamsSchema = z.object({
 
 export const personTaggedImagesQuerySchema = z.object({
   page: z.number().min(1).optional(),
-  language: languageSchema.optional(),
+  language: languageSchemaQuery.optional(),
 });
 
 export const personTaggedImagesResponseSchema = z.object({

@@ -1,14 +1,14 @@
 import { z } from "zod";
 import { castSchema } from "./castSchema";
 import { crewSchema } from "./crewSchema";
-import { languageSchema } from "../../schemas/languageSchema";
+import { languageSchemaQuery } from "../../schemas/languageSchema";
 
 export const personCreditsPathParamsSchema = z.object({
   person_id: z.number({ required_error: "person_id is required" }).min(0),
 });
 
 export const personCreditsQuerySchema = z.object({
-  language: languageSchema.optional(),
+  language: languageSchemaQuery.optional(),
 });
 
 export const personCreditsResponseSchema = z.object({

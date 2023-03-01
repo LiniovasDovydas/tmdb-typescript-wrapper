@@ -1,9 +1,9 @@
 import { z } from "zod";
-import { languageSchema } from "../../schemas/languageSchema";
+import { languageSchemaQuery } from "../../schemas/languageSchema";
 import { personDetailsResponseSchema } from "./personDetailsSchemas";
 
 export const personLatestQuerySchema = z.object({
-  language: languageSchema.optional(),
+  language: languageSchemaQuery.optional(),
 });
 
 export const personLatestResponseSchema = personDetailsResponseSchema;

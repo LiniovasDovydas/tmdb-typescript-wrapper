@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { languageSchema } from "../../schemas/languageSchema";
+import { languageSchemaQuery } from "../../schemas/languageSchema";
 
 /** Sub-requests for person details */
 export const personAppendToResponseEnum = z.enum([
@@ -14,7 +14,7 @@ export const personAppendToResponseEnum = z.enum([
 ]);
 
 export const personDetailsQuerySchema = z.object({
-  language: languageSchema.optional(),
+  language: languageSchemaQuery.optional(),
   append_to_response: z.array(personAppendToResponseEnum).optional(),
 });
 

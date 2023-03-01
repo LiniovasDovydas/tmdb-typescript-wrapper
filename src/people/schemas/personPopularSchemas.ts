@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { languageSchema } from "../../schemas/languageSchema";
+import { languageSchemaQuery } from "../../schemas/languageSchema";
 
 export const personKnownForSchema = z.object({
   adult: z.boolean().optional(),
@@ -32,7 +32,7 @@ export const personPopularSchema = z.object({
 
 export const personPopularQuerySchema = z.object({
   page: z.number().min(1).max(1000).optional(),
-  language: languageSchema.optional(),
+  language: languageSchemaQuery.optional(),
 });
 
 export const personPopularResponseSchema = z.object({

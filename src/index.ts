@@ -14,4 +14,8 @@ export * from './people';
 export * from './reviews';
 // #endregion
 
+// #region Watch providers namespace
+export * from './watchProviders';
+// #endregion
+
 export { createTMDbInstance } from './createTMDbInstance';

@@ -1,12 +1,12 @@
 import { z } from "zod";
-import { languageSchema } from "../../schemas/languageSchema";
+import { languageSchemaQuery } from "../../schemas/languageSchema";
 
 export const personTranslationsPathParamsSchema = z.object({
   person_id: z.number({ required_error: "person_id is required" }).min(0),
 });
 
 export const personTranslationsQuerySchema = z.object({
-  language: languageSchema.optional(),
+  language: languageSchemaQuery.optional(),
 });
 
 export const personTranslationsResponseSchema = z.object({
