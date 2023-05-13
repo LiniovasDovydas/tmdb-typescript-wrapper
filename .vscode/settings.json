@@ -1,0 +1,7 @@
+{
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.check.npmIsInstalled": true,
+  "files.insertFinalNewline": true,
+  "npm.packageManager": "npm",
+  "editor.formatOnSave": true
+}
