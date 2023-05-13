@@ -5,6 +5,6 @@ export {
   reviewsSchema,
   reviewAuthorSchema,
   reviewsPathParamsSchema,
-} from './schemas/reviewSchemas';
+} from "./schemas/reviewSchemas";
 
-export { reviewsRequestHandlers } from './reviewsRequestHandlers';
+export { reviewsRequestHandlers } from "./reviewsRequestHandlers";

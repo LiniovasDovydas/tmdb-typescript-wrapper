@@ -3,14 +3,14 @@ import { languageSchemaQuery } from "../../schemas/languageSchema";
 
 /** Sub-requests for person details */
 export const personAppendToResponseEnum = z.enum([
-  'changes',
-  'movie_credits',
-  'tv_credits',
-  'combined_credits',
-  'external_ids',
-  'images',
-  'tagged_images',
-  'translations',
+  "changes",
+  "movie_credits",
+  "tv_credits",
+  "combined_credits",
+  "external_ids",
+  "images",
+  "tagged_images",
+  "translations",
 ]);
 
 export const personDetailsQuerySchema = z.object({
@@ -19,7 +19,7 @@ export const personDetailsQuerySchema = z.object({
 });
 
 export const personDetailsPathParamsSchema = z.object({
-  person_id: z.number({ required_error: 'person_id is required' }).min(0),
+  person_id: z.number({ required_error: "person_id is required" }).min(0),
 });
 
 export const personDetailsResponseSchema = z.object({
@@ -39,7 +39,13 @@ export const personDetailsResponseSchema = z.object({
   place_of_birth: z.string().nullable().optional(),
 });
 
-export type PersonDetailsPathParamsSchema = z.infer<typeof personDetailsPathParamsSchema>;
-export type PersonDetailsResponseSchema = z.infer<typeof personDetailsResponseSchema>;
-export type PersonAppendToResponseEnum = z.infer<typeof personAppendToResponseEnum>;
+export type PersonDetailsPathParamsSchema = z.infer<
+  typeof personDetailsPathParamsSchema
+>;
+export type PersonDetailsResponseSchema = z.infer<
+  typeof personDetailsResponseSchema
+>;
+export type PersonAppendToResponseEnum = z.infer<
+  typeof personAppendToResponseEnum
+>;
 export type PersonDetailsQuerySchema = z.infer<typeof personDetailsQuerySchema>;

@@ -12,7 +12,8 @@
   },
   "scripts": {
     "build": "tsup",
-    "start": "tsup --watch"
+    "start": "tsup --watch",
+    "test": "vitest"
   },
   "keywords": [
     "tmdb",
@@ -27,10 +28,11 @@
     "node": "./lib/index.cjs"
   },
   "devDependencies": {
-    "cross-fetch": "^3.1.5",
-    "tsup": "^6.7.0",
-    "typescript": "^5.0.4",
-    "zod": "^3.21.4"
+    "cross-fetch": "3.1.5",
+    "tsup": "6.7.0",
+    "typescript": "5.0.4",
+    "vitest": "0.31.0",
+    "zod": "3.21.4"
   },
   "peerDependencies": {
     "cross-fetch": ">= 3.1.5",

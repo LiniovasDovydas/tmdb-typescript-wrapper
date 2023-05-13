@@ -1,0 +1,2 @@
+- Should we test each endpoint ?
+  - or should we test the schemas ?

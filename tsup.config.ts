@@ -1,20 +1,21 @@
-import { defineConfig } from 'tsup';
+import { defineConfig } from "tsup";
 
 export default defineConfig((options) => ({
-  format: ['cjs', 'esm'],
+  name: "tmdb-api",
+  format: ["cjs", "esm"],
   minify: !options.watch,
-  platform: "neutral",
+  platform: "node",
   sourcemap: true,
   watch: !!options.watch,
-  entry: ['src/index.ts'], 
+  entry: ["src/index.ts"],
   treeshake: true,
-  outDir: 'lib',
+  outDir: "lib",
   clean: true,
   dts: {
     resolve: true,
     compilerOptions: {
       moduleResolution: "node",
     },
-    entry: 'src/index.ts',
+    entry: "src/index.ts",
   },
 }));

@@ -25,6 +25,4 @@ export type PersonCreditsResponseSchema = z.infer<
   typeof personCreditsResponseSchema
 >;
 
-export type PersonCreditsQuerySchema = z.infer<
-  typeof personCreditsQuerySchema
->;
+export type PersonCreditsQuerySchema = z.infer<typeof personCreditsQuerySchema>;

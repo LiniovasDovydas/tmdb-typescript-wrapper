@@ -39,11 +39,13 @@ export const personPopularResponseSchema = z.object({
   page: z.number().min(1).optional(),
   total_results: z.number().min(0).optional(),
   total_pages: z.number().min(1).optional(),
-  results: z.array(
-    z.object({
-      adult: z.boolean().optional(),
-    }),
-  ).optional(),
+  results: z
+    .array(
+      z.object({
+        adult: z.boolean().optional(),
+      })
+    )
+    .optional(),
 });
 
 export type PersonPopularSchema = z.infer<typeof personPopularSchema>;

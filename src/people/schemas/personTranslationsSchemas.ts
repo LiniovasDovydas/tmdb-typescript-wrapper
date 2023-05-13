@@ -11,17 +11,19 @@ export const personTranslationsQuerySchema = z.object({
 
 export const personTranslationsResponseSchema = z.object({
   id: z.number().min(0).optional(),
-  translations: z.array(
-    z.object({
-      iso_3166_1: z.string().min(2).optional(),
-      iso_639_1: z.string().min(2).optional(),
-      name: z.string().optional(),
-      english_name: z.string().optional(),
-      data: z.object({
-        biography: z.string().optional(),
-      }),
-    })
-  ).optional(),
+  translations: z
+    .array(
+      z.object({
+        iso_3166_1: z.string().min(2).optional(),
+        iso_639_1: z.string().min(2).optional(),
+        name: z.string().optional(),
+        english_name: z.string().optional(),
+        data: z.object({
+          biography: z.string().optional(),
+        }),
+      })
+    )
+    .optional(),
 });
 
 export type PersonTranslationsPathParamsSchema = z.infer<

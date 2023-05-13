@@ -7,4 +7,6 @@ export const watchProviderSharedSchema = z.object({
   provider_name: z.string(),
 });
 
-export type WatchProviderSharedSchema = z.infer<typeof watchProviderSharedSchema>;
+export type WatchProviderSharedSchema = z.infer<
+  typeof watchProviderSharedSchema
+>;

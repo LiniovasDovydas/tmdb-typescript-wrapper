@@ -4,7 +4,7 @@ export const imageBackDropSizeEnum = z.enum([
   "w300",
   "w780",
   "w1280",
-  "original"
+  "original",
 ]);
 
 export const imageBackDropSizesSchema = z.array(imageBackDropSizeEnum);

@@ -10,6 +10,4 @@ export const personImageProfileSchema = z.object({
   width: z.number().optional(),
 });
 
-export type PersonImageProfileSchema = z.infer<
-  typeof personImageProfileSchema
->;
+export type PersonImageProfileSchema = z.infer<typeof personImageProfileSchema>;

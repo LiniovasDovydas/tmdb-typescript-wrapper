@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const imagePosterSizeEnum = z.enum([  
+export const imagePosterSizeEnum = z.enum([
   "w92",
   "w154",
   "w185",
