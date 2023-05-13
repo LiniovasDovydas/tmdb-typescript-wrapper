@@ -9,7 +9,7 @@ export default defineConfig((options) => ({
   watch: !!options.watch,
   entry: ["src/index.ts"],
   treeshake: true,
-  outDir: "lib",
+  outDir: "dist",
   clean: true,
   dts: {
     resolve: true,

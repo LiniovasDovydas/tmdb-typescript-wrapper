@@ -4,27 +4,31 @@ import { printZodErrorGroup } from "./printZodErrorGroup";
 
 type RequestHandlerInit = Omit<RequestInit, "body">;
 
-type RequestHandlerProps<P, Q, B, R> = {
-  pathSchema?: z.Schema<P>;
-  querySchema?: z.Schema<Q>;
-  bodySchema?: z.Schema<B>;
-  responseSchema: z.Schema<R>;
+type RequestHandlerProps<Path, Query, Body, Response> = {
+  pathSchema?: z.Schema<Path>;
+  querySchema?: z.Schema<Query>;
+  bodySchema?: z.Schema<Body>;
+  responseSchema: z.Schema<Response>;
 };
 
 const BASE_URL = "https://api.themoviedb.org/3";
 
-export function createRequestHandler<P, Q, B, R>(
+export function createRequestHandler<Path, Query, Body, Response>(
   apiKey: string,
   url: string,
-  schemas: RequestHandlerProps<P, Q, B, R>,
+  schemas: RequestHandlerProps<Path, Query, Body, Response>,
   defaultRequestOptions?: RequestHandlerInit
 ) {
   const { pathSchema, querySchema, bodySchema, responseSchema } = schemas;
 
   async function requestHandler(
-    props: P & Q & B extends object ? P & Q & B : {},
+    props: z.input<
+      z.ZodType<Path, z.ZodTypeDef, Path> &
+        z.ZodType<Query, z.ZodTypeDef, Query> &
+        z.ZodType<Body, z.ZodTypeDef, Body>
+    >,
     options?: RequestHandlerInit
-  ): Promise<R> {
+  ): Promise<Response> {
     const params = props;
 
     /** Parse and validate values with provided schemas */
@@ -81,10 +85,10 @@ export function createRequestHandler<P, Q, B, R>(
         parsedData,
         `Response schema is invalid for "${BASE_URL}/${parsedUrl}".`
       );
-      return data as Promise<R>;
+      return data as Promise<Response>;
     }
 
-    return data as Promise<R>;
+    return data as Promise<Response>;
   }
 
   return requestHandler;

@@ -7,9 +7,7 @@ export const watchProviderSchema = z.object({
   iso_3166_1: z.string(),
 });
 
-export const watchProvidersAvailableQuerySchema = z
-  .object({})
-  .extend(languageSchema.shape);
+export const watchProvidersAvailableQuerySchema = languageSchema;
 
 export const watchProvidersAvailableResponseSchema = z.object({
   results: z.array(watchProviderSchema),
