@@ -14,10 +14,18 @@ An unofficial typescript wrapper for TMDb API.
 
 ## Installation
 
-Install following packages using npm or yarn
+Install following packages
 
 ```bash
 npm install tmdb-typescript-wrapper cross-fetch zod
+```
+
+```bash
+yarn add tmdb-typescript-wrapper cross-fetch zod
+```
+
+```bash
+pnpm add tmdb-typescript-wrapper cross-fetch zod
 ```
 
 ## Usage
