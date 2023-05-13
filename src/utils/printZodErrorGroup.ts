@@ -6,7 +6,7 @@ export function printZodErrorGroup<T = any>(
 ) {
   console.group(`⚠️ ${group}`);
   errors.error.errors.flatMap((error) => {
-    console.warn(error.message);
+    console.warn(error);
   });
   console.groupEnd();
 }

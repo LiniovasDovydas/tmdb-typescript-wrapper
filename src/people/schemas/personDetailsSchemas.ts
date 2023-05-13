@@ -1,5 +1,11 @@
 import { z } from "zod";
 import { languageSchemaQuery } from "../../schemas/languageSchema";
+import { personImagesResponseSchema } from "./personImagesSchemas";
+import { personCreditsResponseSchema } from "./personCreditsSchemas";
+import { personExternalIdsResponseSchema } from "./personExternalIdsSchemas";
+import { personTaggedImagesResponseSchema } from "./personTaggedImagesSchemas";
+import { personTranslationsResponseSchema } from "./personTranslationsSchemas";
+import { personDetailsChangesResponseSchema } from "./personDetailsChangesSchemas";
 
 /** Sub-requests for person details */
 export const personAppendToResponseEnum = z.enum([
@@ -37,6 +43,23 @@ export const personDetailsResponseSchema = z.object({
   also_known_as: z.array(z.string()).optional(),
   profile_path: z.string().nullable().optional(),
   place_of_birth: z.string().nullable().optional(),
+
+  /** `append_to_response` contains `images` */
+  images: personImagesResponseSchema.omit({ id: true }).optional(),
+  /** `append_to_response` contains `changes` */
+  changes: personDetailsChangesResponseSchema.optional(),
+  /** `append_to_response` contains `movie_credits` */
+  movie_credits: personCreditsResponseSchema.omit({ id: true }).optional(),
+  /** `append_to_response` contains `tv_credits` */
+  tv_credits: personCreditsResponseSchema.omit({ id: true }).optional(),
+  /** `append_to_response` contains `combined_credits` */
+  combined_credits: personCreditsResponseSchema.omit({ id: true }).optional(),
+  /** `append_to_response` contains `external_ids` */
+  external_ids: personExternalIdsResponseSchema.omit({ id: true }).optional(),
+  /** `append_to_response` contains `tagged_images` */
+  tagged_images: personTaggedImagesResponseSchema.omit({ id: true }).optional(),
+  /** `append_to_response` contains `translations` */
+  translations: personTranslationsResponseSchema.omit({ id: true }).optional(),
 });
 
 export type PersonDetailsPathParamsSchema = z.infer<

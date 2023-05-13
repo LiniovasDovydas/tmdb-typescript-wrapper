@@ -15,7 +15,7 @@ export const personTaggedImagesResponseSchema = z.object({
   id: z.number().min(0).optional(),
   page: z.number().min(1).optional(),
   results: z.array(personImageProfileSchema).optional(),
-  total_pages: z.number().min(1).optional(),
+  total_pages: z.number().min(0).optional(),
   total_results: z.number().min(0).optional(),
 });
 

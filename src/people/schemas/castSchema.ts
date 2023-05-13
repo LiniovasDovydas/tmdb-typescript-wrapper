@@ -14,9 +14,9 @@ export const castSchema = z.object({
   original_title: z.string().optional(),
   popularity: z.number().optional(),
   id: z.number().optional(),
-  backdrop_path: z.string().optional(),
+  backdrop_path: z.string().optional().nullable(),
   overview: z.string().optional(),
-  poster_path: z.string().optional(),
+  poster_path: z.string().optional().nullable(),
 });
 
 export type CastSchema = z.infer<typeof castSchema>;
