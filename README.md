@@ -1,6 +1,6 @@
 > 👋 You can use [TMDB OpenApi](https://developer.themoviedb.org/openapi) and [Orval.dev](https://orval.dev/overview) to generate the API client. 🤣
 
-I've started this as previously the OpenApi spec was broken and the generators I've tried didn't full work. Now it's fixed and you can use the generators. I'll keep this repo for now.
+I've started this as previously the OpenApi spec was broken and the generators I've tried didn't fully work. Now it's fixed and you can use the generators. I'll keep this repo for now.
 
 # [tmdb-typescript-wrapper](https://github.com/LiniovasDovydas/tmdb-typescript-wrapper) (W.I.P)
 
